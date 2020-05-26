@@ -1,5 +1,6 @@
 const express = require('express');
-const chromium = require('chrome-aws-lambda');
+const chrome = require('chrome-aws-lambda');
+const puppeteer = require('puppeteer-core');
 
 const app = express();
 
@@ -13,12 +14,12 @@ app.get('/api/render', async (req, res) => {
     return res.send('please provide url');
   }
   try {
-    const browser = await chromium.puppeteer.launch(
+    const browser = await puppeteer.launch(
       {
-        args: chromium.args,
-        defaultViewport: chromium.defaultViewport,
-        executablePath: await chromium.executablePath,
-        headless: chromium.headless,
+        args: chrome.args,
+        defaultViewport: chrome.defaultViewport,
+        executablePath: await chrome.executablePath,
+        headless: chrome.headless,
         ignoreHTTPSErrors: true,
     });
   
