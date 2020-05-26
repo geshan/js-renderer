@@ -33,3 +33,7 @@ The hit `http://localhost:8080/api/render?url=https://instagram.com`
 If you want to use it for scraping, use the following URL on Vercel:
 
 https://js-renderer.now.sh/api/render?url=https://instagram.com
+
+### Styles broken
+
+Styles and images will look broken but the HTML tags will be there. Happy Web Scraping!
