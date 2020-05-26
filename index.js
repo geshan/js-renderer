@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+const chromium = require('chrome-aws-lambda');
 
 const app = express();
 
@@ -13,18 +13,13 @@ app.get('/api/render', async (req, res) => {
     return res.send('please provide url');
   }
   try {
-    const browser = await puppeteer.launch(
+    const browser = await chromium.puppeteer.launch(
       {
-        executablePath: "./node_modules/puppeteer/.local-chromium/linux-756035",
-        args: [
-          // Required for Docker version of Puppeteer
-          '--no-sandbox',
-          '--disable-setuid-sandbox',
-          // This will write shared memory files into /tmp instead of /dev/shm,
-          // because Docker’s default for /dev/shm is 64MB
-          '--disable-dev-shm-usage'
-        ],
-
+        args: chromium.args,
+        defaultViewport: chromium.defaultViewport,
+        executablePath: await chromium.executablePath,
+        headless: chromium.headless,
+        ignoreHTTPSErrors: true,
     });
   
     const page = await browser.newPage();
