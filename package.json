@@ -1,0 +1,28 @@
+{
+  "name": "js-renderer",
+  "version": "1.0.0",
+  "description": "A online puppeteer service to render pages with javascript (js). Mainly useful for web scraping (not using splash).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geshan/js-renderer.git"
+  },
+  "keywords": [
+    "javascript",
+    "nodejs",
+    "puppeteer"
+  ],
+  "author": "Geshan Manandhar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geshan/js-renderer/issues"
+  },
+  "homepage": "https://github.com/geshan/js-renderer#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^3.1.0"
+  }
+}
