@@ -31,3 +31,5 @@ The hit `http://localhost:8080/api/render?url=https://instagram.com`
 ## How to use it
 
 If you want to use it for scraping, use the following URL on Vercel:
+
+https://js-renderer.now.sh/api/render?url=https://instagram.com
