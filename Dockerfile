@@ -1,5 +1,6 @@
-FROM buildkite/puppeteer:v3.0.4
+FROM zenika/alpine-chrome:83-with-node-12
 
+USER root
 ENV NODE_ENV=production
 WORKDIR /src
 

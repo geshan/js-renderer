@@ -16,11 +16,15 @@ app.get('/api/render', async (req, res) => {
   try {
     const browser = await puppeteer.launch(
       {
-        args: chrome.args,
-        defaultViewport: chrome.defaultViewport,
-        executablePath: await chrome.executablePath,
-        headless: chrome.headless,
-        ignoreHTTPSErrors: true,
+        executablePath: process.env.CHROME_BIN,
+        args: [
+          // Required for Docker version of Puppeteer
+          '--no-sandbox',
+          '--disable-setuid-sandbox',
+          // This will write shared memory files into /tmp instead of /dev/shm,
+          // because Docker’s default for /dev/shm is 64MB
+          '--disable-dev-shm-usage'
+        ],
     });
   
     const page = await browser.newPage();
