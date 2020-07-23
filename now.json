@@ -8,12 +8,12 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
-      "dest": "/index.js"
-    },
-    {
       "src": "/loaderio-d1381f5990ce2602f5d87a303ba0cfb5.txt",
       "dest": "/public/loaderio-d1381f5990ce2602f5d87a303ba0cfb5.txt"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.js"
     }
   ],
   "env": {
